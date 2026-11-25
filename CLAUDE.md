@@ -62,7 +62,9 @@ The buyers' side: public listing pages, the 360 tour viewer, a dealer's listings
 
 - **No login, ever,** for buyers. Every page works from a shared link.
 - **Fast on a cheap Android over 3G:** under 150 KB of JavaScript before the tour loads, key facts visible in under 2 seconds, panoramas lazy-loaded at multiple resolutions.
-- **Link previews and SEO:** each listing page has a proper title, description and image when pasted into WhatsApp or Facebook. *(open decision: Astro, Next.js, or Vite SPA with pre-rendering)*
+- **Client-side rendering only.** A Vite + React single-page app served as static files from S3 and CloudFront. No server-side rendering, no Lambda in the page path. Zero cost when nobody visits.
+- **The 360 viewer runs entirely in the browser** (WebGL). Panoramas are static files on CloudFront.
+- **Link previews without a server:** WhatsApp and Facebook do not run JavaScript, so when a listing is published the backend writes a tiny static HTML file per listing to S3 (`/l/<code>/index.html`) with its title, description and image tags, which then loads the app. Still static, still free at idle.
 - **Mobile first,** designed at 360 px wide. Touch targets at least 44 px.
 - **Languages:** English and Roman Urdu at launch, layout ready for Urdu (right to left). All strings in translation files.
 - **Tour viewer:** Photo Sphere Viewer with the Map and Virtual Tour plugins, wrapped in one component. Opens on the floor plan or site map. If WebGL fails, the photo gallery and video still work.
