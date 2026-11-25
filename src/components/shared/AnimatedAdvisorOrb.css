@@ -1,0 +1,82 @@
+.advisor-orb {
+  --advisor-orb-size: 3rem;
+  position: relative;
+  overflow: visible;
+  display: inline-grid;
+  width: var(--advisor-orb-size);
+  height: var(--advisor-orb-size);
+  flex: 0 0 auto;
+  place-items: center;
+  isolation: isolate;
+}
+
+.advisor-orb--nav {
+  --advisor-orb-size: 2rem;
+}
+
+.advisor-orb--panel {
+  --advisor-orb-size: 3rem;
+}
+
+.advisor-orb--hero {
+  --advisor-orb-size: clamp(5.75rem, 8vw, 7rem);
+}
+
+.advisor-orb__core {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #232323;
+  box-shadow: 0 12px 28px rgba(10, 10, 10, 0.22);
+}
+
+.advisor-orb__core img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: inherit;
+}
+
+.advisor-entry-button {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  color: #232323;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.advisor-entry-button::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(
+    110deg,
+    transparent 0 32%,
+    rgba(207, 228, 186, 0.38) 45%,
+    rgba(220, 66, 95, 0.18) 55%,
+    transparent 68% 100%
+  );
+  transform: translateX(-125%);
+  animation: advisor-entry-sheen 5.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes advisor-entry-sheen {
+  0%,
+  72% {
+    transform: translateX(-125%);
+  }
+  88%,
+  100% {
+    transform: translateX(125%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advisor-entry-button::after {
+    animation: none;
+  }
+}

@@ -78,5 +78,6 @@ The buyers' side: public listing pages, the 360 tour viewer, a dealer's listings
 - **Track only what is needed:** page open, tour opened, room viewed, WhatsApp tapped, tagged by listing and link source. No third-party ad trackers at launch.
 - **Dealer branding** (logo, name, number) comes from the API, never from a hardcoded tenant list.
 - **Freshness is visible:** every price shows its "last confirmed" date. Sold and stale listings say so clearly.
+- **Design system is Calls Insight's, copied as is.** Theme, CSS, Tailwind config, typography and shared components come from the Calls Insight frontend (another Varcaz product). Do not invent new UI components or styles: copy the Calls Insight one into `src/components/shared/` unchanged and log it in `docs/reference-from-calls-insights.md`. Follow `docs/design/DESIGN_CONTEXT.md` (card hierarchy, spacing, radius). Never bring over Calls Insight branding, logos, demo data or client names.
 - Accessibility: alt text, readable contrast, keyboard-usable viewer controls.
 - Hosting: S3 plus CloudFront with origin access control in `ap-southeast-2`, deployed from CI.
