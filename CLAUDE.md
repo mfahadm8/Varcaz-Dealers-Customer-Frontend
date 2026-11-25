@@ -12,6 +12,12 @@ These rules apply to every change in this repo, by people and AI agents alike. R
 4. **MVP scope is frozen** to the design doc: WhatsApp agent, listings, weekly roll-call, matching, public listing and tour pages, small admin panel. New ideas go to `docs/backlog.md`.
 5. **Decisions are recorded** in `docs/decisions.md` (one entry per decision: date, choice, why).
 
+## Agents and workflow
+
+- Follow `docs/workflow.md`. Major decisions (Track A) go through independent reviews by `first-principles-thinker`, `lean-council` and the domain reviewers, then an interview with Fahad, then a recorded ADR.
+- Every feature (Track B) passes the validation gate before merge: `qa-validator` always, plus the domain reviewers the change needs. No one validates their own work.
+- Agent definitions live in `.claude/agents/`. Change an agent only through a PR.
+
 ## Git and GitHub
 
 - Repos are private. Trunk branch: `foundation` until it replaces `main`.
