@@ -18,6 +18,12 @@ These rules apply to every change in this repo, by people and AI agents alike. R
 - Every feature (Track B) passes the validation gate before merge: `qa-validator` always, plus the domain reviewers the change needs. No one validates their own work.
 - Agent definitions live in `.claude/agents/`. Change an agent only through a PR.
 
+## Credentials and external platforms
+
+- **AWS:** credentials already exist on Fahad's machine under the AWS CLI profile `inside` (account 893685201076, region ap-southeast-2). Use `--profile inside` or `AWS_PROFILE=inside`. Never ask for, copy or store access keys.
+- **External platforms** (Meta / WhatsApp, GitHub settings, domain registrars, any service that needs a signup or login): the agent opens the page in the browser and tells Fahad exactly what to do. Fahad signs in and completes logins, verification, payments and approvals himself. The agent never types passwords, codes or card details.
+- Any key or token a platform issues goes straight into SSM Parameter Store (via the `inside` profile), never into chat, code or files.
+
 ## Git and GitHub
 
 - Repos are private. Trunk branch: `foundation` until it replaces `main`.
