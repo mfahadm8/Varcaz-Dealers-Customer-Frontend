@@ -4,7 +4,7 @@ Newest first. Open questions live in the planning doc's Interview section until 
 
 | Date | Decision | Why |
 | --- | --- | --- |
-| 2026-11-26 | AWS access through the local CLI profile `inside`; external signups done by Fahad in the browser, guided by the agent | Credentials stay with Fahad |
+| 2026-11-26 | AWS access through the local CLI profile `callsinsight`; external signups done by Fahad in the browser, guided by the agent | Credentials stay with Fahad |
 | 2026-11-26 | Admin app state: TanStack Query for server data, Zustand for UI state, no Redux | Less code; caching built in |
 | 2026-11-26 | Bot persona: the dealer's assistant, admits it is automated when asked | Honest and in the dealer's voice |
 | 2026-11-26 | Customer frontend: client-side rendered SPA on S3 + CloudFront; link previews from static per-listing HTML files written at publish time | Zero cost at zero usage; 360 viewer is browser-only |
