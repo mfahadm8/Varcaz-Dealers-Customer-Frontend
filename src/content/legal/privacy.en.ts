@@ -10,7 +10,7 @@ export const privacyPolicy = (entity: string, email: string): LegalDocument => (
       id: "who-we-are",
       title: "Who we are",
       paragraphs: [
-        `Varcaz Dealers is a service run by ${entity} ("we", "us"). It gives businesses in Pakistan, such as property dealers, wholesalers and online brands, an AI assistant on their WhatsApp Business number, public listing pages and 360 virtual tours.`,
+        `Varcaz Dealers is a service run by ${entity} ("we", "us"). It gives businesses in Pakistan of every kind, including wholesalers, distributors, retailers, e-commerce brands, service providers and property dealers, an AI assistant on their WhatsApp Business number, public listing pages and 360 virtual tours.`,
         "When you message a business that uses Varcaz Dealers, the business decides why your information is used, and we process it for them to run the service. For business accounts and our own website, we decide how information is used.",
       ],
     },

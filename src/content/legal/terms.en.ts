@@ -17,8 +17,8 @@ export const termsOfUse = (entity: string, email: string): LegalDocument => ({
       id: "the-service",
       title: "What the service does",
       paragraphs: [
-        "Varcaz Dealers helps businesses answer enquiries on WhatsApp, keep their listings up to date and share listing pages and virtual tours with customers.",
-        "We are a software provider. We are not an agent, broker or party to any sale. Any sale or deal is between the customer and the business (and, for property, the owner).",
+        "Varcaz Dealers helps businesses of any type, from wholesalers and e-commerce brands to retailers and property dealers, answer enquiries on WhatsApp, keep their listings up to date and share listing pages and virtual tours with customers.",
+        "We are a software provider. We are not an agent, broker or party to any sale. Any sale, order or deal is between the customer and the business (and, where relevant, the owner of the goods or property).",
       ],
     },
     {
