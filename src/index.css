@@ -1,0 +1,510 @@
+/* Keep the application self-contained in demo/offline environments. Browsers
+   use an installed Poppins face when available and fall back to the system
+   sans stack without making a third-party font request. */
+@import "react-toastify/dist/ReactToastify.css";
+
+/* ---------- Tailwind Imports and Global Styles ---------- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Base Theme (Light) ---------- */
+:root {
+  /* Primary (Red) - RGB channels for Tailwind opacity modifiers */
+  --color-primary-700: 169 1 33; /* #a90121 */
+  --color-primary-500: 220 66 95; /* #dc425f - Red-500(Main) */
+  --color-primary-600: 197 47 76; /* #c52f4c - Red-600(Hover) */
+
+  /* Secondary (Green) - RGB channels for Tailwind opacity modifiers */
+  --color-secondary-700: 101 157 47; /* #659d2f */
+  --color-secondary-500: 130 196 65; /* #82c441 - Green-500(Main) */
+  --color-secondary-300: 149 223 77; /* #95df4d */
+  --color-secondary-100: 207 228 186; /* #cfe4ba */
+
+  /* Neutral (Gray) - RGB channels for Tailwind opacity modifiers */
+  --color-neutral-900: 19 19 19; /* #131313 - Gray-900 (Darkest text/BG in dark mode) */
+  --color-neutral-850: 28 28 28; /* #1c1c1c */
+  --color-neutral-800: 35 35 35; /* #232323 */
+  --color-neutral-700: 53 56 72; /* #353848 */
+  --color-neutral-500: 106 105 105; /* #6a6969 - Gray-500(Text) */
+  --color-neutral-200: 175 173 171; /* #afadab */
+  --color-neutral-150: 204 204 204; /* #cccccc */
+  --color-neutral-100: 229 229 229; /* #e5e5e5 */
+  --color-neutral-50: 246 246 246; /* #f6f6f6 - Gray-50 (Lightest BG in light mode) */
+
+  /* White - RGB channels for Tailwind opacity modifiers */
+  --color-white: 255 255 255; /* #ffffff */
+  --color-white-text: rgba(255, 255, 255, 0.7);
+  --color-white-stroke: rgba(255, 255, 255, 0.4);
+  --color-white-10-bg: 20 20 20; /* #141414 */
+
+  /* ---------- Credit Bureau Colors - RGB channels for Tailwind opacity modifiers ---------- */
+  --color-credit-equifax: 255 116 141; /* #ff748d - Equifax */
+  --color-credit-experian: 219 115 228; /* #db73e4 - Experian */
+  --color-credit-transunion: 110 141 255; /* #6e8dff - TransUnion */
+
+  /* Status - RGB channels for Tailwind opacity modifiers */
+  --color-status-orange: 255 128 45; /* #ff802d */
+  --color-status-yellow: 249 183 14; /* #f9b70e */
+  --color-status-blue-chart: 96 202 228; /* #60cae4 */
+  --color-status-error: 255 9 9; /* #ff0909 - Error */
+
+  /* Status Transparencies (Used as utilities or specific component backgrounds) */
+  --color-status-blue-10: rgba(96, 202, 228, 0.1);
+  --color-status-green-300-10: rgba(149, 223, 77, 0.1);
+  --color-status-green-10: rgba(140, 186, 94, 0.1);
+  --color-status-gray200-10: rgba(175, 173, 171, 0.1);
+  --color-status-red-10: rgba(220, 66, 95, 0.1);
+  --color-status-yellow-10: rgba(255, 209, 45, 0.1);
+  --color-status-orange-10: rgba(255, 128, 45, 0.1);
+
+  /* Table Lines */
+  --color-table-line-bg: rgba(0, 0, 0, 0.03);
+  --color-table-line-bg-active: rgba(140, 186, 94, 0.1);
+
+  /* Utility (Kept structure for border and overlay, but using new color variables) */
+  --color-border: var(--color-neutral-150); /* Assuming border is mid-gray */
+  --color-overlay: var(
+    --color-neutral-700
+  ); /* Choosing a darker neutral for overlay base */
+
+  /* Typography (Retained original structure for completeness) */
+  --font-family-sans: "Poppins", "Helvetica Neue", sans-serif;
+  --font-size-base: 1rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* Radius & Shadows (Retained original structure for completeness) */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --onboarding-hero-height: 300px;
+  --onboarding-sticky-height: 76px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+  --shadow-float: 0 8px 24px rgba(15, 23, 42, 0.14);
+  --app-nav-height: 5rem;
+  --app-context-height: 3.5rem;
+  --app-sticky-offset: calc(var(--app-nav-height) + var(--app-context-height));
+  --page-work-envelope-nav-height: 80px;
+  --page-work-envelope-peek: 24px;
+  --page-work-envelope-cap-height: 32px;
+  --page-work-envelope-dock-height: 56px;
+  --page-work-envelope-seam-overlap: 8px;
+}
+@media (max-width: 767px) {
+  :root {
+    --app-nav-height: 7rem;
+    --page-work-envelope-nav-height: 64px;
+    --page-work-envelope-peek: 16px;
+    --page-work-envelope-cap-height: 24px;
+    --page-work-envelope-dock-height: 40px;
+  }
+}
+@layer base {
+  html {
+    @apply font-sans;
+    scroll-padding-top: calc(var(--app-sticky-offset) + 1.5rem);
+    scroll-behavior: smooth;
+  }
+}
+
+/* ---------- Semantic Typography Utilities ---------- */
+@layer utilities {
+  /* Headings */
+  .h2 {
+    @apply text-[40px] font-bold leading-[1.3] tracking-[-0.5px] text-white;
+  }
+  .h2-light {
+    @apply text-[40px] font-bold leading-[1.3] tracking-[-0.5px] text-white;
+  }
+  .h3 {
+    @apply text-[24px] font-semibold leading-[1.4] text-neutral-800;
+  }
+  .h4 {
+    @apply text-[20px] font-semibold leading-[1.4] text-neutral-800;
+  }
+
+  .h4-light {
+    @apply text-[20px] font-semibold leading-[1.4] text-white;
+  }
+
+  .h5 {
+    @apply text-[16px] font-semibold leading-[1.4] text-neutral-800;
+  }
+
+  .h5-light {
+    @apply text-[16px] font-semibold leading-[1.4] text-white;
+  }
+  .h6 {
+    @apply text-[15px] font-semibold leading-[1.4] text-neutral-800;
+  }
+  .h6-light {
+    @apply text-[15px] font-semibold leading-[1.4] text-white;
+  }
+
+  /* Paragraph / Body Text */
+  .body-lg {
+    @apply text-lg leading-relaxed;
+  }
+  .body-m {
+    @apply text-white text-[16px] font-normal leading-[1.5] tracking-[-0.16px];
+  }
+
+  .body-sm {
+    @apply text-[14px] font-normal leading-[1.4] tracking-[-0.14px] text-neutral-500;
+  }
+  .body-sm-light {
+    @apply text-[14px] font-normal leading-[1.4] tracking-[-0.14px] text-white-text;
+  }
+
+  .body-xs {
+    @apply text-[12px] font-normal leading-[1.4] tracking-[-0.12px] text-neutral-500;
+  }
+
+  /* Layout */
+  .app-layout {
+    @apply w-full max-w-[1440px] px-6 lg:px-10 mx-auto;
+  }
+
+  .navigation-brand {
+    @apply block h-7 w-[9.625rem] min-w-7 overflow-hidden md:h-9 md:w-[12.375rem];
+    container: navigation-brand / inline-size;
+  }
+
+  .navigation-brand img {
+    @apply block h-full w-full object-contain object-left;
+  }
+
+  .navigation-brand-contextual {
+    @apply w-7 shrink-0 md:w-9 min-[1400px]:w-[12.375rem];
+  }
+
+  @container navigation-brand (max-width: 6rem) {
+    .navigation-brand img {
+      @apply w-auto max-w-none;
+      clip-path: inset(0 82% 0 0);
+    }
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.page-chrome-main {
+  position: relative;
+  z-index: 41;
+  margin-top: -4rem;
+}
+
+html[data-page-chrome-collapsed="true"] .page-chrome-main {
+  /* Compact chrome never changes the document's work-surface geometry. */
+  margin-top: -4rem;
+}
+
+.page-work-envelope {
+  position: relative;
+  z-index: 20;
+}
+
+/* The outer envelope owns the hero overlap. Its inner work surface remains
+ * ordinary document flow so expanded content cannot slide underneath chrome. */
+.page-work-envelope.page-chrome-main {
+  z-index: 20;
+  margin-top: -4rem;
+}
+
+.page-work-envelope-dock {
+  position: sticky;
+  top: var(--page-work-envelope-nav-height);
+  z-index: 30;
+  width: 100%;
+  height: var(--page-work-envelope-dock-height);
+  margin-bottom: calc(var(--page-work-envelope-dock-height) * -1);
+  pointer-events: none;
+  background: transparent;
+}
+
+.page-work-envelope-cap-fill {
+  position: absolute;
+  top: var(--page-work-envelope-peek);
+  left: 50%;
+  width: min(1440px, 100%);
+  height: calc(var(--page-work-envelope-cap-height) + 1px);
+  transform: translateX(-50%);
+  border-radius: 2rem 2rem 0 0;
+  background: transparent;
+}
+
+html[data-page-chrome-collapsed="true"] .page-work-envelope-dock {
+  /* Keep the non-interactive decorative dock flush with compact chrome while
+   * the work surface itself remains in ordinary document flow. The small
+   * overlap sits behind the navbar and prevents a white repaint seam at
+   * fractional zoom levels. */
+  position: fixed;
+  top: calc(
+    var(--page-work-envelope-nav-height) -
+      var(--page-work-envelope-seam-overlap)
+  );
+  left: 0;
+  height: calc(
+    var(--page-work-envelope-dock-height) +
+      var(--page-work-envelope-seam-overlap)
+  );
+  background: rgb(var(--color-neutral-900));
+}
+
+html[data-page-chrome-collapsed="true"] .page-work-envelope-cap-fill {
+  top: calc(
+    var(--page-work-envelope-peek) +
+      var(--page-work-envelope-seam-overlap)
+  );
+  background: rgb(var(--color-white));
+}
+
+html[data-page-chrome-collapsed="true"] .ask-history-sidebar {
+  top: var(--page-work-envelope-nav-height);
+}
+
+.page-work-envelope-body {
+  position: relative;
+  z-index: 20;
+  min-height: 20rem;
+  border-radius: 2rem 2rem 0 0;
+  background: rgb(var(--color-white));
+}
+
+@media (max-width: 767px) {
+  .page-chrome-main {
+    margin-top: -2rem;
+  }
+
+
+  .page-work-envelope.page-chrome-main {
+    margin-top: -2rem;
+  }
+
+  .page-work-envelope-cap-fill,
+  .page-work-envelope-body {
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+}
+
+.hero-wrapper {
+  background-image: url("./assets/bg.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 400px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+body {
+  background-color: rgb(var(--color-neutral-50));
+  color: rgb(var(--color-neutral-900));
+  font-family: var(--font-family-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.recharts-layer.recharts-pie,
+.recharts-sector:focus {
+  outline: none !important;
+  outline-color: none;
+  outline-style: none;
+  outline-width: none;
+}
+.recharts-pie-sector:focus,
+.recharts-pie-sector > g:focus,
+.recharts-pie-sector > g > g:focus {
+  outline: none !important;
+  outline-color: none;
+  outline-style: none;
+  outline-width: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.2s ease-out;
+}
+
+/* Scale utilities for funnel stages */
+.scale-102 {
+  transform: scale(1.02);
+}
+
+.scale-103 {
+  transform: scale(1.03);
+}
+/*
+ * ----------------------------------------------------------------
+ * 🎨 FIGMA TOKEN TO TAILWIND CLASS MAPPING REFERENCE 
+ * ----------------------------------------------------------------
+ * This mapping ensures you use the correct Tailwind utility class 
+ * that corresponds to the designer's token name in Figma.
+ *
+ * | FIGMA TOKEN NAME      | TAILWIND CLASS            | USAGE CONTEXT                                     |
+ * | --------------------- | ------------------------- | ------------------------------------------------- |
+ * | Red/Red-500(Main)     | bg-primary-500            | Main Call-to-Action (CTA) background, primary .   |
+ * | Red/Red-600(Hover)    | hover:bg-primary-600      | Hover state for primary actions.                  |
+ * | Green/Green-500(Main) | text-secondary-500        | Secondary link color, chart color.                |
+ * | Gray/Gray-900         | text-neutral-900          | Primary body text (Light Mode).                   |
+ * | Gray/Gray-50          | bg-neutral-50             | Default light container/page background.          |
+ * | Gray/Gray-500(Text)   | text-neutral-500          | Secondary or disabled text.                       |
+ * | Statuses/Erorr        | text-status-error         | Error message text color.                         |
+ * | Statuses/Red-10%      | bg-status-red-10          | Error message background color (transparent).     |
+ * | White/White-text      | text-white-text           | Secondary text overlayed on dark colors.          |
+ * ----------------------------------------------------------------
+ */
+
+/* src/
+├── assets/                 # images, fonts, icons, static files
+│   ├── images/
+│   └── icons/
+│
+├── components/             # reusable UI components
+│   ├── common/             # shared components (Buttons, Inputs, Modals)
+│   └── layout/             # layout components (Navbar, Sidebar, Header)
+│
+├── pages/                  # route pages (Home, Dashboard, Login)
+│   └── dashboard/
+│
+├── hooks/                  # custom React hooks
+│
+├── context/                # global context providers
+│
+├── services/               # API services, axios instances
+│   └── api.ts
+│
+├── utils/                  # helper functions & constants
+│   ├── constants.ts
+│   └── helpers.ts
+│
+├── types/                  # TypeScript types & interfaces
+│   └── index.d.ts
+│
+├── store/                  # Zustand / Redux store (if using)
+│
+├── styles/                 # global styles & SCSS
+│   ├── main.scss          # global styling imports
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   └── components/        # component-specific scss if needed
+│
+├── router/                 # react-router config
+│   └── index.tsx
+│
+├── App.tsx
+├── main.tsx
+└── vite-env.d.ts */
+
+/* -----------------------------------------------
+ * Toast — design system overrides
+ * ----------------------------------------------- */
+.Toastify__toast {
+  border-radius: 24px;
+  padding: 14px 20px;
+  min-height: 0;
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  color: rgb(var(--color-neutral-900));
+}
+
+.Toastify__toast--success {
+  background: rgb(var(--color-secondary-100));
+}
+.Toastify__toast--success .Toastify__toast-icon svg {
+  color: rgb(var(--color-secondary-500));
+  fill: rgb(var(--color-secondary-500));
+}
+
+.Toastify__toast--error {
+  background: #fef0f2;
+}
+.Toastify__toast--error .Toastify__toast-icon svg {
+  color: rgb(var(--color-primary-500));
+  fill: rgb(var(--color-primary-500));
+}
+
+.Toastify__toast--warning {
+  background: #fef8e7;
+}
+.Toastify__toast--warning .Toastify__toast-icon svg {
+  color: rgb(var(--color-status-yellow));
+  fill: rgb(var(--color-status-yellow));
+}
+
+.Toastify__toast--info {
+  background: #eef8fb;
+}
+.Toastify__toast--info .Toastify__toast-icon svg {
+  color: rgb(var(--color-status-blue-chart));
+  fill: rgb(var(--color-status-blue-chart));
+}
+
+.Toastify__toast-body {
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+  color: rgb(var(--color-neutral-900));
+}
+
+.Toastify__close-button {
+  color: rgb(var(--color-neutral-500));
+  opacity: 0.6;
+  align-self: center;
+}
+.Toastify__close-button:hover {
+  opacity: 1;
+  color: rgb(var(--color-neutral-900));
+}
+
+.Toastify__progress-bar {
+  height: 2px;
+}
+
+.wave-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 45%;
+  width: 100%;
+  background: var(--wave-color);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  /* Wavy effect using clip-path */
+  clip-path: path(
+    "M0,60 C100,120 200,20 300,60 C400,110 500,20 600,60 L600,200 L0,200 Z"
+  );
+}
