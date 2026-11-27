@@ -1,5 +1,6 @@
 import { CONTACT_EMAIL, LEGAL_ENTITY } from "@/config/site";
 import Logo from "@/assets/brand/righthand-logo-dark.svg";
+import VarcazLogo from "@/assets/brand/varcaz-logo-dark.svg";
 
 const Footer = () => {
   return (
@@ -17,8 +18,9 @@ const Footer = () => {
           </a>
         </div>
         <img src={Logo} alt="RightHand" className="mx-auto mt-6 h-6 w-auto" />
-        <p className="text-xs text-neutral-400 opacity-60 pt-3 pb-14">
-          Powered by RightHand, a service run by {LEGAL_ENTITY}
+        <p className="flex items-center justify-center gap-1.5 text-xs text-neutral-400 pt-3 pb-14">
+          <span className="opacity-60">A service run by</span>
+          <img src={VarcazLogo} alt={LEGAL_ENTITY} className="h-4 w-auto opacity-70" />
         </p>
       </div>
     </footer>
