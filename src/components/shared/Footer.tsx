@@ -1,4 +1,5 @@
 import { CONTACT_EMAIL, LEGAL_ENTITY } from "@/config/site";
+import Logo from "@/assets/brand/righthand-logo-gradient.svg";
 
 const Footer = () => {
   return (
@@ -15,7 +16,8 @@ const Footer = () => {
             Contact Us
           </a>
         </div>
-        <p className="text-xs text-neutral-400 opacity-60 pt-4 pb-14">
+        <img src={Logo} alt="RightHand" className="mx-auto mt-6 h-6 w-auto" />
+        <p className="text-xs text-neutral-400 opacity-60 pt-3 pb-14">
           Powered by RightHand, a service run by {LEGAL_ENTITY}
         </p>
       </div>
