@@ -2,7 +2,7 @@
 
 **Problem.** The Meta app (WhatsApp Cloud API, Tech Provider) needs a public privacy policy URL, terms URL and data deletion instructions before review.
 
-**User story.** A buyer, dealer or Meta reviewer opens `/privacy` or `/terms` on a phone or desktop and reads how Varcaz Dealers handles data and the rules of use.
+**User story.** A buyer, dealer or Meta reviewer opens `/privacy` or `/terms` on a phone or desktop and reads how RightHand handles data and the rules of use.
 
 **Acceptance criteria**
 

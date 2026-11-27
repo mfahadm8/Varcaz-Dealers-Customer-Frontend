@@ -1,4 +1,4 @@
-# Varcaz Dealers Customer Frontend
+# RightHand Customer Frontend
 
 Status: foundation. Pages so far: `/privacy` and `/terms`.
 

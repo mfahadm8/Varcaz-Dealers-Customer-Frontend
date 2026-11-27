@@ -4,6 +4,7 @@ Newest first. Open questions live in the planning doc's Interview section until 
 
 | Date | Decision | Why |
 | --- | --- | --- |
+| 2026-11-27 | Product renamed "Varcaz Dealers" → "RightHand" on the public site: legal page eyebrows and body text, page titles and meta description, footer ("Powered by RightHand, a service run by Varcaz"), favicon (RightHand gradient mark) and 180 px apple-touch icon. The legal entity stays "Varcaz" (`LEGAL_ENTITY`, "RightHand is a service run by Varcaz"); "Last updated 27 November 2026" already current. Repo and package names (`varcaz-dealers-customer-frontend`), AWS resource names, SSM paths and stack names are unchanged | Owner: "the name of the platform is RightHand"; renaming infrastructure brings no user benefit |
 | 2026-11-26 | UI design system: copied verbatim from Calls Insight (Varcaz product); no new components | Fahad's instruction; one Varcaz look |
 | 2026-11-26 | AWS access through the local CLI profile `callsinsight`; external signups done by Fahad in the browser, guided by the agent | Credentials stay with Fahad |
 | 2026-11-26 | Admin app state: TanStack Query for server data, Zustand for UI state, no Redux | Less code; caching built in |

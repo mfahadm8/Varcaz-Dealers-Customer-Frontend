@@ -1,4 +1,4 @@
-# Varcaz Dealers Customer Frontend
+# RightHand Customer Frontend
 
 Public listing pages and 360 tours that buyers open from WhatsApp links.
 

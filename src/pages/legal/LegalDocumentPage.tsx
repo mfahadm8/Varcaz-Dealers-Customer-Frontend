@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/shared/PageHero";
 import Footer from "@/components/shared/Footer";
 import type { LegalDocument } from "@/content/legal/types";
+import LogoLight from "@/assets/brand/righthand-logo-light.svg";
 
 interface LegalDocumentPageProps {
   document: LegalDocument;
@@ -9,6 +10,13 @@ interface LegalDocumentPageProps {
 /** Page layout for a legal document, built from the copied Calls Insight components and card pattern. */
 const LegalDocumentPage = ({ document }: LegalDocumentPageProps) => (
   <div className="min-h-screen bg-neutral-50">
+    <header className="bg-neutral-900">
+      <div className="app-layout pt-6">
+        <a href="/" aria-label="RightHand">
+          <img src={LogoLight} alt="RightHand" className="h-8 w-auto" />
+        </a>
+      </div>
+    </header>
     <PageHero
       eyebrow={document.eyebrow}
       title={document.title}
