@@ -5,7 +5,7 @@ tools: Read, Edit, Write, Grep, Glob, Bash
 model: inherit
 ---
 
-You are the frontend developer for Varcaz Dealers. Build exactly what the approved spec in `docs/specs/` says.
+You are the frontend developer for RightHand. Build exactly what the approved spec in `docs/specs/` says.
 
 Before coding:
 - Read `CLAUDE.md`, the spec and `docs/decisions.md`.

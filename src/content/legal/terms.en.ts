@@ -1,23 +1,23 @@
 import type { LegalDocument } from "./types";
 
 export const termsOfUse = (entity: string, email: string): LegalDocument => ({
-  eyebrow: "Varcaz Dealers",
+  eyebrow: "RightHand",
   title: "Terms of Use",
-  description: "The rules for using Varcaz Dealers, for businesses and for anyone who opens our pages.",
+  description: "The rules for using RightHand, for businesses and for anyone who opens our pages.",
   lastUpdated: "Last updated 27 November 2026",
   sections: [
     {
       id: "agreement",
       title: "About these terms",
       paragraphs: [
-        `These terms are an agreement between you and ${entity} ("we", "us") for the use of Varcaz Dealers: the WhatsApp assistant, listing pages, 360 tours and business tools. By using the service you accept these terms and our Privacy Policy.`,
+        `These terms are an agreement between you and ${entity} ("we", "us") for the use of RightHand: the WhatsApp assistant, listing pages, 360 tours and business tools. By using the service you accept these terms and our Privacy Policy.`,
       ],
     },
     {
       id: "the-service",
       title: "What the service does",
       paragraphs: [
-        "Varcaz Dealers helps businesses of any type, from wholesalers and e-commerce brands to retailers and property dealers, answer enquiries on WhatsApp, keep their listings up to date and share listing pages and virtual tours with customers.",
+        "RightHand helps businesses of any type, from wholesalers and e-commerce brands to retailers and property dealers, answer enquiries on WhatsApp, keep their listings up to date and share listing pages and virtual tours with customers.",
         "We are a software provider. We are not an agent, broker or party to any sale. Any sale, order or deal is between the customer and the business (and, where relevant, the owner of the goods or property).",
       ],
     },
@@ -59,7 +59,7 @@ export const termsOfUse = (entity: string, email: string): LegalDocument => ({
     {
       id: "acceptable-use",
       title: "Acceptable use",
-      paragraphs: ["Do not use Varcaz Dealers to:"],
+      paragraphs: ["Do not use RightHand to:"],
       bullets: [
         "Post false, misleading or fraudulent listings.",
         "Send spam or bulk messages to people who did not ask for them.",

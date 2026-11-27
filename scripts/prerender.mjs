@@ -5,9 +5,9 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const ROUTES = {
-  privacy: "Privacy Policy | Varcaz Dealers",
-  terms: "Terms of Use | Varcaz Dealers",
-  "data-deletion": "Delete your data | Varcaz Dealers",
+  privacy: "Privacy Policy | RightHand",
+  terms: "Terms of Use | RightHand",
+  "data-deletion": "Delete your data | RightHand",
 };
 
 const dist = path.resolve("dist");
@@ -16,7 +16,7 @@ const { render } = await import(pathToFileURL(path.resolve("dist-ssr/entry-serve
 
 for (const [route, title] of Object.entries(ROUTES)) {
   const html = shell
-    .replace("<title>Varcaz Dealers</title>", `<title>${title}</title>`)
+    .replace("<title>RightHand</title>", `<title>${title}</title>`)
     .replace('<div id="root"></div>', `<div id="root">${render(`/${route}`)}</div>`);
   fs.writeFileSync(path.join(dist, `${route}.html`), html);
   console.log(`prerendered /${route}`);

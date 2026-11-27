@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL } from "@/config/site";
+import { CONTACT_EMAIL, LEGAL_ENTITY } from "@/config/site";
 
 const Footer = () => {
   return (
@@ -16,7 +16,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="text-xs text-neutral-400 opacity-60 pt-4 pb-14">
-          Powered by Varcaz Dealers by Varcaz
+          Powered by RightHand, a service run by {LEGAL_ENTITY}
         </p>
       </div>
     </footer>

@@ -17,9 +17,9 @@ Copied byte for byte:
 Changed on the way in:
 
 - `src/contexts/index.ts`: keeps only the page chrome exports. The rest pulls in Calls Insight's global app state and demo data.
-- `src/components/shared/Footer.tsx`: links point to `/terms`, `/privacy` and the contact email; the line reads "Powered by Varcaz Dealers by Varcaz".
+- `src/components/shared/Footer.tsx`: links point to `/terms`, `/privacy` and the contact email; the line reads "Powered by RightHand, a service run by Varcaz" (legal entity from `LEGAL_ENTITY`).
 
 Not copied:
 
 - `NavBar` and `navbar/`, `GlobalSearch`, `SourceLinkedEpisodes`, `EntityLinks`, `StickyFilterShell`, `AccountabilitySlider`, `CaseInvestigation`, `call-upload`: they depend on Calls Insight's auth, API services or demo data.
-- The Calls Insight logos and favicon: they carry the Calls Insight name. A Varcaz Dealers logo is still needed.
+- The Calls Insight logos and favicon: they carry the Calls Insight name. The favicon is the RightHand gradient mark (`public/favicon.svg`, supplied 2026-11-27).

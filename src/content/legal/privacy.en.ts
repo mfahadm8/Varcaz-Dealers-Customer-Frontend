@@ -1,7 +1,7 @@
 import type { LegalDocument } from "./types";
 
 export const privacyPolicy = (entity: string, email: string): LegalDocument => ({
-  eyebrow: "Varcaz Dealers",
+  eyebrow: "RightHand",
   title: "Privacy Policy",
   description: "How we collect, use and protect information on WhatsApp and on our listing pages.",
   lastUpdated: "Last updated 27 November 2026",
@@ -10,8 +10,8 @@ export const privacyPolicy = (entity: string, email: string): LegalDocument => (
       id: "who-we-are",
       title: "Who we are",
       paragraphs: [
-        `Varcaz Dealers is a service run by ${entity} ("we", "us"). It gives businesses in Pakistan of every kind, including wholesalers, distributors, retailers, e-commerce brands, service providers and property dealers, an AI assistant on their WhatsApp Business number, public listing pages and 360 virtual tours.`,
-        "When you message a business that uses Varcaz Dealers, the business decides why your information is used, and we process it for them to run the service. For business accounts and our own website, we decide how information is used.",
+        `RightHand is a service run by ${entity} ("we", "us"). It gives businesses in Pakistan of every kind, including wholesalers, distributors, retailers, e-commerce brands, service providers and property dealers, an AI assistant on their WhatsApp Business number, public listing pages and 360 virtual tours.`,
+        "When you message a business that uses RightHand, the business decides why your information is used, and we process it for them to run the service. For business accounts and our own website, we decide how information is used.",
       ],
     },
     {
@@ -71,7 +71,7 @@ export const privacyPolicy = (entity: string, email: string): LegalDocument => (
       id: "retention",
       title: "How long we keep information",
       bullets: [
-        "Conversations and customer requirements are kept while the business uses Varcaz Dealers, and are deleted within 30 days after the business leaves.",
+        "Conversations and customer requirements are kept while the business uses RightHand, and are deleted within 30 days after the business leaves.",
         "Past chats a business imports are kept as raw files only until they are processed, and for no more than 30 days. What remains has identity card numbers and payment details removed.",
         "Listing pages and tours are removed when the business deletes the listing.",
         "Page visit statistics are kept for up to 12 months.",
@@ -97,7 +97,7 @@ export const privacyPolicy = (entity: string, email: string): LegalDocument => (
     {
       id: "children",
       title: "Children",
-      paragraphs: ["Varcaz Dealers is meant for adults. We do not knowingly collect information from anyone under 18."],
+      paragraphs: ["RightHand is meant for adults. We do not knowingly collect information from anyone under 18."],
     },
     {
       id: "changes",
