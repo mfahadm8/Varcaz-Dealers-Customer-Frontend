@@ -1,5 +1,5 @@
 import { CONTACT_EMAIL, LEGAL_ENTITY } from "@/config/site";
-import Logo from "@/assets/brand/righthand-logo-gradient.svg";
+import Logo from "@/assets/brand/righthand-logo-dark.svg";
 
 const Footer = () => {
   return (

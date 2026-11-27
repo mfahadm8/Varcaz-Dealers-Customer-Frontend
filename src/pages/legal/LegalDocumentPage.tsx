@@ -1,7 +1,7 @@
 import { PageHero } from "@/components/shared/PageHero";
 import Footer from "@/components/shared/Footer";
 import type { LegalDocument } from "@/content/legal/types";
-import LogoLight from "@/assets/brand/righthand-logo-light-gradient.svg";
+import LogoLight from "@/assets/brand/righthand-logo-light.svg";
 
 interface LegalDocumentPageProps {
   document: LegalDocument;
